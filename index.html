@@ -213,11 +213,11 @@
                 margin-top: 140px;
             }
             */
-            #timeline .demo-card:nth-of-type(even) {
+            #timeline div.demo-card:nth-of-type(odd) {
                 margin-top: 40px;
             }
 
-            #timeline .demo-card:nth-of-type(odd) {
+            #timeline div.demo-card:nth-of-type(even) {
                 margin-top: 140px;
             }
         
@@ -308,16 +308,16 @@
 
 <div>
     <section id="timeline">
-        <h1>A Flexbox Timeline</h1>
-        <p class="leader">All cards must be the same height and width for space calculations on large screens.</p>
+        <h1>A Timeline</h1>
+        <p class="leader">Adjusting...</p>
         
         <div class="demo-card-wrapper">
 
-            <div class="year-card year-card--step6"  data-aos="zoom-in">
+            <span class="year-card year-card--step6"  data-aos="zoom-in">
                 <div class="head">
                     <h2>2017</h2>
                 </div>
-            </div>
+            </span>
 
 
             <div class="demo-card demo-card--step1"  data-aos="zoom-in">
@@ -374,11 +374,11 @@
                 </div>
             </div>
 
-            <div class="year-card year-card--step6"  data-aos="zoom-in">
+            <span class="year-card year-card--step6"  data-aos="zoom-in">
                 <div class="head">
                     <h2>2016</h2>
                 </div>
-            </div>
+            </span>
 
             <div class="demo-card demo-card--step5"  data-aos="zoom-in">
                 <div class="head">
@@ -478,11 +478,11 @@
             </div>
         
             
-            <div class="year-card year-card--step6"  data-aos="zoom-in">
+            <span class="year-card year-card--step6"  data-aos="zoom-in">
                 <div class="head">
                     <h2>2015</h2>
                 </div>
-            </div>
+            </span>
 
         </div>
     </section>
@@ -492,7 +492,10 @@
 
 
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 200,
+            delay: 500,
+        });
     </script>
 
 </html>
