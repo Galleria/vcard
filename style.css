@@ -1,0 +1,52 @@
+#timeline .demo-card--step1 {
+  background-color: #46b8e9;
+}
+#timeline .demo-card--step1 .head::after {
+  border-color: #46b8e9;
+}
+#timeline .demo-card--step2 {
+  background-color: #3ee9d1;
+}
+#timeline .demo-card--step2 .head::after {
+  border-color: #3ee9d1;
+}
+#timeline .demo-card--step3 {
+  background-color: #ce43eb;
+}
+#timeline .demo-card--step3 .head::after {
+  border-color: #ce43eb;
+}
+#timeline .demo-card--step4 {
+  background-color: #4d92eb;
+}
+#timeline .demo-card--step4 .head::after {
+  border-color: #4d92eb;
+}
+#timeline .demo-card--step5 {
+  background-color: #46b8e9;
+}
+#timeline .demo-card--step5 .head::after {
+  border-color: #46b8e9;
+}
+/*
+#timeline .year-card--step6 .head{
+  background-color: aquamarine;
+}
+*/
+#timeline .year-card--step6 .head h2{
+    background-color: rgba(0, 0, 0, 0.17);
+}
+#timeline .year-card--step6 .head{
+    line-height: 50px;
+    width: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+#timeline .demo-card--step7 {
+  background-color: #FF6B6B;
+}
+#timeline .demo-card--step7 .head::after {
+  border-color: #FF6B6B;
+}
