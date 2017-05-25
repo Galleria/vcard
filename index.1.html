@@ -1,0 +1,467 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+        <script src="vendor/animation/aos.js"></script>
+        <link rel="stylesheet" href="vendor/animation/aos.css" />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="style.css" />
+        <style>
+
+        @media (min-width: 1000px) {
+
+            .content div.demo-card:nth-of-type(odd)::after,
+            .content div.demo-card:nth-of-type(even)::before {
+                position: absolute;
+                content: "2017/30/06";
+                height: 19px;
+                background-color: #bdbdbd;
+                /*border-radius: 9px;*/
+                box-shadow: 0px 0px 2px 8px #f7f7f7;
+                z-index: 2;
+                top:8%;
+            }
+            
+            .content div.demo-card:nth-of-type(odd)::after {
+                right: -20%;
+            }
+    
+            .content div.demo-card:nth-of-type(even)::before {
+                left: -20%;
+            }
+
+            
+            .content div.demo-card:nth-of-type(odd) .body::after {
+                position: absolute;
+                content: "";
+                border-left-width: 15px;
+                border-left-style: solid;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent; 
+                right: -3.5%;
+                top: 7%;
+                z-index: 10;
+            }
+
+            .content div.demo-card:nth-of-type(even) .body::before {
+                position: absolute;
+                content: "";
+                border-right-width: 15px;
+                border-right-style: solid;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent; 
+                left: -3.3%;
+                top: 7%;
+                z-index: 10;
+            }
+            
+        }
+
+        .demo-card-wrapper , 
+        .year-card {
+            position: relative;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        @media (min-width: 1000px) {
+            .demo-card-wrapper ,
+            .year-card {
+                width: 1170px;
+            }
+        }
+        
+        .demo-card-wrapper::after {
+            z-index: 1;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            border-left: 1px solid rgba(191, 191, 191, 0.4);
+        }
+        
+        /*
+        @media (min-width: 1000px) {
+            #timeline .demo-card-wrapper::after{
+                border-left: 1px solid #bdbdbd;
+            }
+        }
+        */
+
+        .demo-card {
+            position: relative;
+            display: block;
+            /*margin: 10px auto 80px;*/
+            margin:0px calc(5%/2)+0px 80px;
+            max-width: 94%;
+            z-index: 2;
+            margin-bottom: 30px;
+        }
+
+       .year-card , 
+       .date-time-card{
+            position: relative;
+            display: flex;
+            z-index: 2;
+            margin:20px 2px 20px;
+            max-width: 100%;
+            color:white;
+            flex-basis: 100%;
+            justify-content:center;
+        }
+
+        /*
+        @media (min-width: 480px) {
+            #timeline .demo-card {
+                max-width: 60%;
+                box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
+            }
+        }
+
+        @media (min-width: 720px) {
+            #timeline .demo-card {
+                max-width: 38%;
+                width: 38%;
+                -webkit-align-self: flex-start;
+                align-self: flex-start;
+            }
+
+            #timeline .demo-card:nth-of-type(odd) {
+                margin-top: 40px;
+            }
+
+            #timeline .demo-card:nth-of-type(even) {
+                margin-top: 140px;
+            }
+
+        }
+
+        */
+
+        @media (min-width: 1000px) {
+
+            .demo-card {
+                width: 50%;
+                max-width: 450px;
+                -webkit-align-self: flex-start;
+                align-self: flex-start;
+            }
+            
+            .left-card {
+                margin-top: 40px;
+            }
+
+            .right-card {
+                margin-top: 140px;
+            }
+            
+            
+            .content div.demo-card:nth-of-type(odd) {
+                margin-top: 40px;
+            }
+
+            .content div.demo-card:nth-of-type(even) {
+                margin-top: 140px;
+            }
+            
+        }
+
+        div.demo-card:hover::before,
+        div.demo-card:hover::after{
+            background-color : #FF6B6B;
+        }
+
+        div.head {
+            position: relative;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        div.head-month {
+            position: relative;
+            display: flex;
+            align-items: center;
+            color:black;
+            font-weight: 400;
+        }
+
+        #timeline .demo-card .head .number-box {
+            display: inline;
+            margin: 15px;
+            padding: 10px;
+            font-size: 35px;
+            line-height: 35px;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.17);
+        }
+
+        #timeline .demo-card .head h2 {
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            font-weight: inherit;
+            letter-spacing: 2px;
+            margin: 0;
+            padding-bottom: 6px;
+            line-height: 1rem;
+        }
+
+        #timeline .demo-card .head h2 span {
+            display: block;
+            font-size: 0.6rem;
+            margin: 0;
+        }
+
+        /*
+        @media (min-width: 480px) {
+            #timeline .demo-card .head h2 {
+                font-size: 165%;
+                line-height: 1.2rem;
+            }
+
+            #timeline .demo-card .head h2 span {
+                font-size: 0.8rem;
+            }
+        }
+        */
+
+        .demo-card .body {
+            background: #fff;
+            border: 1px solid rgba(191, 191, 191, 0.4);
+            border-top: 0;
+            padding: 15px;
+        }
+
+        .demo-card .body p {
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 15px;
+        }
+        .demo-card .body img {
+            display: block;
+            width: 100%;
+        }
+
+
+        .content{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        </style>
+
+    </head>
+    <body>
+
+<div>
+    <section id="timeline">
+        <h1>A Timeline</h1>
+        <p class="leader">Adjusting...</p>
+        
+        <div class="demo-card-wrapper" id="demo-card-wrapper">
+
+            <div class="year-card year-card--step6"  data-aos="zoom-in">
+
+                <div class="head">
+                    <h2>2017</h2>
+                </div>
+
+                <div class="head-month">
+                    <h3>January</h3>
+                </div>
+
+                <div class="content">
+                
+                    <div class="demo-card demo-card--step1"  data-aos="zoom-in">
+                        <div class="head" >
+                            <div class="number-box">
+                                <span>01</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Technology</h2>
+                        </div>
+                        <div class="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                            <img src="http://placehold.it/1000x500" alt="Graphic">
+                        </div>
+                    </div>
+
+                    <div class="demo-card demo-card--step2"  data-aos="zoom-in">
+                        <div class="head">
+                            <div class="number-box">
+                                <span>02</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Confidence</h2>
+                        </div>
+                        <div class="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                            <img src="http://placehold.it/1000x500" alt="Graphic">
+                        </div>
+                    </div>
+
+                    <div class="demo-card demo-card--step3"  data-aos="zoom-in">
+                        <div class="head">
+                            <div class="number-box">
+                                <span>03</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Adaptation</h2>
+                        </div>
+                        <div class="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                            <img src="http://placehold.it/1000x500" alt="Graphic">
+                        </div>
+                    </div>
+
+                    <div class="demo-card demo-card--step4"  data-aos="zoom-in">
+                        <div class="head">
+                            <div class="number-box">
+                                <span>04</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Consistency</h2>
+                        </div>
+                        <div class="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                            <img src="http://placehold.it/1000x500" alt="Graphic">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="year-card year-card--step6"  data-aos="zoom-in">
+                <div class="head">
+                    <h2>2016</h2>
+                </div>
+                <div class="content">
+
+                    <div class="demo-card demo-card--step5"  data-aos="zoom-in">
+                        <div class="head">
+                            <div class="number-box">
+                                <span>05</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Conversion</h2>
+                        </div>
+                        <div class="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                            <img src="http://placehold.it/1000x500" alt="Graphic">
+                        </div>
+                    </div>
+
+                    <div class="demo-card demo-card--step7"  data-aos="zoom-in" >
+                        <div class="head">
+                            <div class="number-box">
+                                <span>06</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Conversion</h2>
+                        </div>
+                        <div class="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-card demo-card--step7"  data-aos="zoom-in" >
+                        <div class="head">
+                            <div class="number-box">
+                                <span>07</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Conversion</h2>
+                        </div>
+                        <div class="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="year-card year-card--step6"  data-aos="zoom-in">
+                <div class="head">
+                    <h2>2015</h2>
+                </div>
+                <div class="content">
+
+                    <div class="demo-card demo-card--step7"  data-aos="zoom-in" >
+                        <div class="head">
+                            <div class="number-box">
+                                <span>08</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Conversion</h2>
+                        </div>
+                        <div class="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-card demo-card--step7"  data-aos="zoom-in" >
+                        <div class="head">
+                            <div class="number-box">
+                                <span>09</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Conversion</h2>
+                        </div>
+                        <div class="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-card demo-card--step7"  data-aos="zoom-in" >
+                        <div class="head">
+                            <div class="number-box">
+                                <span>10</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Conversion</h2>
+                        </div>
+                        <div class="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                        </div>
+                    </div>
+
+                    <div class="demo-card demo-card--step7"  data-aos="zoom-in" >
+                        <div class="head">
+                            <div class="number-box">
+                                <span>11</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Conversion</h2>
+                        </div>
+                        <div class="body">
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="demo-card demo-card--step7"  data-aos="zoom-in" >
+                        <div class="head">
+                            <div class="number-box">
+                                <span>12</span>
+                            </div>
+                            <h2><span class="small">Subtitle</span> Conversion</h2>
+                        </div>
+                        <div class="body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-card year-card--step6"  data-aos="zoom-in">
+                <div class="head">
+                    <h2>2014</h2>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+    </body>
+
+
+    <script>
+        AOS.init({
+            duration: 200,
+            delay: 500,
+        });
+    </script>
+
+</html>
