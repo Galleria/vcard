@@ -7,11 +7,16 @@ import { Card, CardImg, CardText, CardBlock,
 import { openTimeLine, closeTimeLine } from '../actions'
 import { connect } from 'react-redux'
 
+
+import {
+  Link
+} from 'react-router-dom'
+
 class VCard extends Component{
 
     constructor(props){
         super(props)
-        console.dir(props)
+        //console.dir(props)
 
         this.openTimeLine = this.props.openTimeLine
         this.closeTimeLine = this.props.closeTimeLine
@@ -31,6 +36,7 @@ class VCard extends Component{
                     <Button onClick={this.props.openTimeLine}>Open</Button>
                     <Button onClick={this.props.closeTimeLine}>Close</Button>
                     <Button onClick={this.Hello}>Alert Status</Button>
+                    <li><Link to="/timeline">About</Link></li>
                     </CardBlock>
                 </Card>
             </div>
@@ -39,8 +45,7 @@ class VCard extends Component{
 
     Hello = () => {
         //alert ('TimeLine status : '+ this.props )
-        console.log('TimeLine status : ')
-        console.log(this.props.type )
+        console.log('TimeLine status : '+this.props.type)
     }
     /*
     openTimeLine = () => {

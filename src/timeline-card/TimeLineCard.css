@@ -1,0 +1,46 @@
+.demo-card--step1 {
+  background-color: #46b8e9;
+}
+.content div.demo-card--step1 .body::after,
+.content div.demo-card--step1 .body::before
+ {
+  border-color: #46b8e9;
+}
+
+#timeline .demo-card--step2 {
+  background-color: #3ee9d1;
+}
+.content div.demo-card--step2 .body::before {
+  border-color: #3ee9d1;
+}
+
+#timeline .demo-card--step3 {
+  background-color: #ce43eb;
+}
+.content div.demo-card--step3 .body::after {
+  border-color: #ce43eb;
+}
+
+#timeline .demo-card--step4 {
+  background-color: #4d92eb;
+}
+.content div.demo-card--step4 .body::before {
+  border-color: #4d92eb;
+}
+
+#timeline .demo-card--step5 {
+  background-color: #46b8e9;
+}
+.content div.demo-card--step5 .body::after {
+  border-color: #46b8e9;
+}
+
+#timeline .demo-card--step7 {
+  background-color: #FF6B6B;
+}
+.content div.demo-card--step7 .body::after {
+  border-color: #FF6B6B;
+}
+.content div.demo-card--step7 .body::before {
+  border-color: #FF6B6B;
+}

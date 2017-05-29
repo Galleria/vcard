@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 import TimeLine from './timeline/TimeLine'
+import Index from './index/Index'
 
-import VCard from './v-card/V-Card'
-import { Container, Row, Col } from 'reactstrap';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 class App extends Component {
 
@@ -18,34 +20,13 @@ class App extends Component {
   }
 
   render() {
-    
-    let cardlist = ['Group','Test','Zero','Kamo']
-    let cards = cardlist.map( (name,idx) => <Col key={idx} ><VCard text={name} key={idx} /></Col> );
-
     return (
-      <div className="App">
-        <Container>
-          <Row>
-              <Col>
-                <div className="App-header">
-                  <img src={logo} className="App-logo" alt="logo" />
-                  <h2>Welcome to React</h2>
-                </div>
-              </Col>
-          </Row>
-          <Row>
-            <Col>
-              <p className="App-intro">
-                To get started, edit <code>src/App.js</code> and save to reload.
-              </p>
-            </Col>
-          </Row>
-          <Row>
-              {cards}
-          </Row>
-        </Container>
-        <TimeLine />
-      </div>
+      <Router>
+        <div>
+          <Route path="/" component={Index}/>
+          <Route path="/timeline" component={TimeLine}/>
+        </div>
+      </Router>
     );
   }
 
