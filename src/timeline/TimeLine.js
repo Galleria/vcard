@@ -1,71 +1,56 @@
 import React, { Component } from 'react';
 import './TimeLine.css'
-import './vendor/font-awesome/css/font-awesome.min.css'
 
 import { connect } from 'react-redux'
 import { closeTimeLine } from '../actions'
 
-import { Button } from 'reactstrap';
+import { Button } from 'reactstrap'
 
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
+import TimeLineYear from '../timeline-year/TimeLineYear'
 
-import TimeLineCard from '../timeline-card/TimeLineCard'
+import {Link} from 'react-router-dom'
 
-import {
-  Link
-} from 'react-router-dom'
+import './vendor/font-awesome/css/font-awesome.min.css'
+import AOS from '../vendor/animation/aos.js'
+import '../vendor/animation/aos.css'
 
 class TimeLine extends Component {
 
   constructor(props){
     super(props)
     this.history = props.history 
-    console.log( props )
+    this.match = props.match 
+    //console.log( props )
   }
 
   componentWillMount(){
-
+    AOS.init({
+            duration: 200,
+            delay: 500,
+        });
   }
 
   render() {
     return (
-      <div className="dashBoard" /*style={{display: this.props.type }}*/ >
-        {/*<Button onClick={this.props.closeTimeLine}>Close</Button>*/}
-        <section id="timeline">
-          <h1>A Timeline</h1>
+      <div className="dashBoard">
+        <div className="dashBoard-left"></div>
+        <section id="timeline" className="dashBoard-right">
+          <h1>A Timeline for : {this.match.params.id}</h1>
           <div className="demo-card-wrapper" id="demo-card-wrapper">
 
-
-          <div className="year-card year-card--step6"  data-aos="zoom-in">
-
-                <div className="head">
-                    <h2>2017</h2>
-                </div>
-
-                <div className="head-month">
-                    <h3>January</h3>
-                </div>
-
-                <div className="content">
-                
-                    <TimeLineCard/>
-
-                    <TimeLineCard/>
-
-                    <TimeLineCard/>
-
-                    <TimeLineCard/>
-
-                </div>
-
-            </div>
-
-
+            <TimeLineYear/>
+            <TimeLineYear/>
+            <TimeLineYear/>
           </div>
+        <button className="circle-btn" onClick={this.addCard}>+</button>
         </section>
         <Link to="/"><Button onClick={this.backBtn}>Close</Button></Link>
       </div>
     );
+  }
+
+  addCard(){
+    alert('addCard')
   }
 }
 

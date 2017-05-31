@@ -6,7 +6,8 @@ import Index from './index/Index'
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  Switch
 } from 'react-router-dom'
 
 class App extends Component {
@@ -17,16 +18,19 @@ class App extends Component {
 
   componentDidMount(){
     //const { dispatch, view } = this.props
+     const { location } = this.props
   }
 
   render() {
+    const { location } = this.props
+
     return (
-      <Router>
+      <Router >
         <div>
-          <Route path="/" component={Index}/>
-          <Route path="/timeline" component={TimeLine}/>
+          <Route exact path="/" component={Index}/>
+          <Route path="/timeline/:id" component={TimeLine}/>
         </div>
-      </Router>
+      </Router >
     );
   }
 

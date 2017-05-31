@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './TimeLineCard.css'
 
+
 class TimeLineCard extends Component {
 
   constructor(props){
@@ -9,7 +10,7 @@ class TimeLineCard extends Component {
 
   render() {
     return (
-      <div className="demo-card demo-card--step1"  data-aos="zoom-in">
+      <div className="demo-card"  data-aos="zoom-in">
           <div>
               <div className="head" >
                   <div className="number-box">
@@ -19,7 +20,7 @@ class TimeLineCard extends Component {
               </div>
               <div className="body">
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
-                  <img src="http://placehold.it/1000x500" alt="Graphic" />
+                  {/*<img src="http://placehold.it/1000x500" alt="Graphic" /> */}
               </div>
           </div>
       </div>

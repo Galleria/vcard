@@ -30,13 +30,13 @@ class VCard extends Component{
                 <Card>
                     <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
                     <CardBlock>
-                    <CardTitle>Card title</CardTitle>
+                    <CardTitle>{this.props.text}</CardTitle>
                     <CardSubtitle>Card subtitle</CardSubtitle>
                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                     <Button onClick={this.props.openTimeLine}>Open</Button>
                     <Button onClick={this.props.closeTimeLine}>Close</Button>
                     <Button onClick={this.Hello}>Alert Status</Button>
-                    <li><Link to="/timeline">About</Link></li>
+                    <li><Link to={"/timeline/"+this.props.text}>About</Link></li>
                     </CardBlock>
                 </Card>
             </div>

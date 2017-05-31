@@ -3,7 +3,9 @@ import logo from '../logo.svg';
 import './Index.css';
 
 import VCard from '../v-card/V-Card'
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap'
+
+import SlideShow from './slide-show/SlideShow'
 
 class Index extends Component {
 
@@ -18,30 +20,63 @@ class Index extends Component {
   render() {
     
     let cardlist = ['Group','Test','Zero','Kamo']
-    let cards = cardlist.map( (name,idx) => <Col key={idx} ><VCard text={name} key={idx} /></Col> );
+    let cards = cardlist.map( (name,idx) => {
+      return (
+        <Col key={idx} >
+          <VCard text={name} key={idx} />
+        </Col> 
+      )
+    });
+
+    let row_line = 3 
+
+    let row = []
+    let col = []
+    cards.forEach( (card,idx) =>{
+      if( idx > 0 && idx % (row_line-1) == 0  ){
+        col.push( card )
+        row.push( <Row key={idx}> {col} </Row> )
+        col = []
+      }else if( idx === cards.length-1 ){
+        col.push( card )
+        for( let i=0 ; i< row_line-(col.length-1) ; i++ ){
+          col.push( <Col key={i} /> )
+        }
+        row.push( <Row key={idx}> {col} </Row> )
+        col = []
+      }else{
+        col.push( card )
+      }
+    })
 
     return (
       <div className="App">
-        <Container>
+
           <Row>
               <Col>
                 <div className="App-header">
                   <img src={logo} className="App-logo" alt="logo" />
-                  <h2>Welcome to React</h2>
+                  <h2>Welcome to VCard</h2>
                 </div>
               </Col>
           </Row>
-          <Row>
-            <Col>
-              <p className="App-intro">
-                To get started, edit <code>src/App.js</code> and save to reload.
-              </p>
-            </Col>
-          </Row>
-          <Row>
-              {cards}
-          </Row>
-        </Container>
+
+          <Container>
+
+            <Row className="App-Slide">
+              <Col>
+                <SlideShow/>
+              </Col>
+            </Row>
+
+            {row}
+            {/*
+            <Row>
+                {cards}
+            </Row>
+            */}
+          </Container>
+
       </div>
     );
   }
