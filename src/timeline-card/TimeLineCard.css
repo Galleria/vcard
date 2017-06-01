@@ -127,7 +127,7 @@ div.demo-card .body img {
         div.demo-card:nth-of-type(odd)::after,
         div.demo-card:nth-of-type(even)::before {
             position: absolute;
-            content: "2017/30/06";
+            content: "yyyy/mm/dd";
             height: 19px;
             background-color: #bdbdbd;
             /*border-radius: 9px;*/

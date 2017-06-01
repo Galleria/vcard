@@ -26,6 +26,7 @@ class VCard extends Component{
 //style={{display: this.state.showStore ? '' : 'none' }}
     render() {
         return (
+            <Link to={"/timeline/"+this.props.text}>
             <div >
                 <Card>
                     <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
@@ -36,10 +37,10 @@ class VCard extends Component{
                     <Button onClick={this.props.openTimeLine}>Open</Button>
                     <Button onClick={this.props.closeTimeLine}>Close</Button>
                     <Button onClick={this.Hello}>Alert Status</Button>
-                    <li><Link to={"/timeline/"+this.props.text}>About</Link></li>
                     </CardBlock>
                 </Card>
             </div>
+            </Link>
         );
     }
 
